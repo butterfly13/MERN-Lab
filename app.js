@@ -23,7 +23,11 @@ app.get('/api/students', (req, res) => {
 
 // add student
 app.post('/api/students', (req, res) => {
-  Student.create(req.body)
+  Student.create({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    course: req.body.course 
+  })
     .then(students => res.json(students))
     .catch(err => console.log(err))
 })
