@@ -50,7 +50,7 @@ app.put('/api/students/:id',(req, res) => {
 
 // delete a student by id
 app.delete('/api/students/:id', (req, res) => {
-  Student.findByIdAndRemove(req,params.id, (err, student) => {
+  Student.findByIdAndRemove(req.params.id, (err, student) => {
     // handle any db errors
     if(err) return res.status(500).send(err)
     
