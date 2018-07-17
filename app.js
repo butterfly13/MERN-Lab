@@ -44,7 +44,7 @@ app.put('/api/students/:id',(req, res) => {
   Student.findByIdAndUpdate(req.params.id, req.body, (err, student) => {
     // handle db errors
     if(err) return res.status(500).send(err)
-    return res.send('Student info is successfully updated' + student)
+    return res.send(`Student info is successfully updated\n ${student}`)
   })
 })
 
